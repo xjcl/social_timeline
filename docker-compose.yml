@@ -1,0 +1,27 @@
+# https://stackoverflow.com/a/39208187/2111778
+version: '2'
+
+services:
+  mysql:
+    container_name: mysql
+    restart: always
+    image: mysql:5.7
+    command: --init-file /data/application/init.sql
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./setup_database.sql:/data/application/init.sql
+      - my-datavolume:/var/lib/mysql
+
+  web:
+    build: .
+    image: social_timeline
+    ports:
+      - "80:80"
+    depends_on:
+      # TODO change to service_started https://stackoverflow.com/a/35476843/2111778
+      - mysql
+
+volumes:
+  my-datavolume:
+
