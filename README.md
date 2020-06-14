@@ -5,8 +5,9 @@ View the result here: http://167.172.140.13/
 
 How to run: `sudo docker-compose up` 🐋
 
+If you make changes: `eval "sudo docker-compose "{down,build,up}";"`
+
 TODO:
-- make it look good on mobile
 - try out nginx instead of Apache
 - add pictures to description
 
