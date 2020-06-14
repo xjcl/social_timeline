@@ -7,8 +7,9 @@ How to run: `sudo docker-compose up` 🐋
 
 If you make changes: `eval "sudo docker-compose "{down,build,up}";"`
 
+![Demo of the page on mobile](demo.jpg)
+
 TODO:
 - try out nginx instead of Apache
-- add pictures to description
 
 <!-- https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-ubuntu-18-04 -->
