@@ -3,7 +3,6 @@ version: '2'
 
 services:
   mysql:
-    container_name: mysql
     restart: always
     image: mysql:5.7
     command: --init-file /data/application/init.sql
