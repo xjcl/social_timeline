@@ -24,7 +24,8 @@ function getAllPosts() {
     callAjax(function(responseText) {
         json_arr = JSON.parse(responseText);
         var str_arr = json_arr.map(post =>
-            `${escapeHTML(post.content)}<br>` +
+            // https://stackoverflow.com/a/784547/2111778
+            `${escapeHTML(post.content).replace(/(?:\r\n|\r|\n)/g, '<br>')}<br>` +
             `<button onclick=\"deletePost(${post.id})\" class="buttonSocial buttonDelete">` +
             `Delete</button><br><br>`
         );

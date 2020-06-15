@@ -46,7 +46,4 @@ body {
 
     /* wrap posts which do not contain any spaces or newlines */
     word-wrap: break-word;
-
-    /* Display newlines as newlines without replacing \n by <br> */
-    white-space: pre-line;
 }

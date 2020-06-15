@@ -3,18 +3,25 @@
 <script src="index.js"></script>
 <link rel="stylesheet" type="text/css" href="index.css">
 <!-- https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag#Viewport_width_and_screen_width -->
+<!-- Apparently, this only affects mobile devices -->
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=0.86">
 </head>
 <body onload="getAllPosts()">
 
 <div class="feed">
 
-<b>Welcome to SocialNet!</b><p><form action="">
+<b>Welcome to SocialNet!</b>
+
+<p>
+<form action="">
     <textarea class="postArea" id="newpost" placeholder="Why not post something..."
         name="newpost"></textarea>
     <input type="button" class="buttonSocial buttonCreate" value="Post"
         onclick="createPost(document.getElementById('newpost').value)">
-</form></p><hr>
+</form>
+</p>
+
+<hr>
 
 <p><span id="txtPosts"></span></p>
 
