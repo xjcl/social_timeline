@@ -5,8 +5,11 @@
 // only allow numbers
 $id = preg_replace( "/[^0-9]/", "", $_REQUEST["id"] );
 
-$con = mysqli_connect("mysql", "newuser", "user_password", "social");
-mysqli_query($con, "DELETE FROM posts WHERE id = " . $id);
-mysqli_commit($con);
+$con = new mysqli("mysql", "newuser", "user_password", "social");
+
+$stmt = $con->prepare("DELETE FROM posts WHERE id = ?");
+$stmt->bind_param('s', $id);
+$stmt->execute();
+$stmt->close();
 
 ?>

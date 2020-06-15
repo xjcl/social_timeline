@@ -3,10 +3,12 @@ create database if not exists social;
 
 USE social;
 
+-- https://stackoverflow.com/a/9533324/2111778
+-- posts will have 560 = 4 * 140 bytes so up to 140 4-character emojis can be stored
 create table if not exists posts
 (
     id int not null auto_increment,
-    content varchar(140) not null,
+    content varchar(560) not null,
     primary key(id)
 );
 
